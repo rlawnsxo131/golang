@@ -1,4 +1,4 @@
-package function
+package main
 
 import "fmt"
 
@@ -10,7 +10,7 @@ func addr() func(int) int {
 	}
 }
 
-func AddrMain() {
+func addrMain() {
 	pos, neg := addr(), addr()
 	for i := 0; i < 10; i++ {
 		fmt.Println(pos(i), neg(-2*i))
@@ -31,9 +31,14 @@ func fibonacci() func() int {
 	}
 }
 
-func FibonacciMain() {
+func fibonacciMain() {
 	fibo := fibonacci()
 	for i := 0; i < 10; i++ {
 		fmt.Println(fibo())
 	}
+}
+
+func main() {
+	addrMain()
+	fibonacciMain()
 }

@@ -1,8 +1,8 @@
-package slice
+package main
 
 import "fmt"
 
-func Slice() {
+func slice() {
 	p := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println("p ==", p)
 	// [3, 5, 7]
@@ -17,7 +17,7 @@ func Slice() {
 	fmt.Println("p[4:] ==", p[4:])
 }
 
-func SliceSecond() {
+func sliceSecond() {
 	a := make([]int, 5)
 	printSlice("a", a)
 	b := make([]int, 0, 5) // capacity
@@ -28,7 +28,7 @@ func SliceSecond() {
 	printSlice("d", d)
 }
 
-func SliceThird() {
+func sliceThird() {
 	var z []int
 	fmt.Println(z, len(z), cap(z))
 	if z == nil {
@@ -37,14 +37,14 @@ func SliceThird() {
 }
 
 // range
-func SliceFourth() {
+func sliceFourth() {
 	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
 	for i, v := range pow {
 		fmt.Printf("2**%d = %d\n", i, v)
 	}
 }
 
-func SliceFifth() {
+func sliceFifth() {
 	pow := make([]int, 10)
 	for i := range pow {
 		pow[i] = 1 << uint(i)
@@ -58,4 +58,12 @@ func SliceFifth() {
 func printSlice(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",
 		s, len(x), cap(x), x)
+}
+
+func main() {
+	slice()
+	sliceSecond()
+	sliceThird()
+	sliceFourth()
+	sliceFifth()
 }

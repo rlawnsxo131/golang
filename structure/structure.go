@@ -1,4 +1,4 @@
-package structure
+package main
 
 import "fmt"
 
@@ -7,14 +7,14 @@ type Vertex struct {
 	Y int
 }
 
-func Structure() {
+func structure() {
 	p := Vertex{1, 2}
 	q := &p
 	q.X = 1e9
 	fmt.Println(p)
 }
 
-func StructureSecond() {
+func structureSecond() {
 	var (
 		p = Vertex{1, 2}  // has type Vertex
 		q = &Vertex{1, 2} // has type *Vertex
@@ -24,9 +24,15 @@ func StructureSecond() {
 	fmt.Println(p, q, r, s)
 }
 
-func StructureThird() {
+func structureThird() {
 	v := new(Vertex)
 	fmt.Println(v)
 	v.X, v.Y = 11, 9
 	fmt.Println(v)
+}
+
+func main() {
+	structure()
+	structureSecond()
+	structureThird()
 }

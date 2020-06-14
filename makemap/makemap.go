@@ -1,4 +1,4 @@
-package makemap
+package main
 
 import "fmt"
 
@@ -6,7 +6,7 @@ type Vertex struct {
 	Lat, Long float64
 }
 
-func MakeMap() {
+func makeMap() {
 	var m = make(map[string]Vertex)
 	m["Bell Labs"] = Vertex{
 		40.68433, -74.39967,
@@ -14,7 +14,7 @@ func MakeMap() {
 	fmt.Println(m["Bell Labs"])
 }
 
-func MakeMapSecond() {
+func makeMapSecond() {
 	var m = map[string]Vertex{
 		// Vertex 생략 가능
 		// 만약 가장 상위의 타입이 타입명이라면 리터럴에서 타입명을 생략해도 됩니다.
@@ -34,7 +34,7 @@ func MakeMapSecond() {
 	fmt.Println(m)
 }
 
-func MakeMapThird() {
+func makeMapThird() {
 	m := make(map[string]int)
 
 	// 맵의 요소 삽입, 수정, 가져오기
@@ -52,4 +52,10 @@ func MakeMapThird() {
 	v, ok := m["Answer"]
 	fmt.Println("The value:", v, "Present?", ok)
 
+}
+
+func main() {
+	makeMap()
+	makeMapSecond()
+	makeMapThird()
 }
