@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"golang-practice/function"
 	"golang-practice/iterator"
 	"golang-practice/makemap"
 	"golang-practice/slice"
@@ -23,4 +24,6 @@ func main() {
 	makemap.MakeMap()
 	makemap.MakeMapSecond()
 	makemap.MakeMapThird()
+	function.AddrMain()
+	function.FibonacciMain()
 }
